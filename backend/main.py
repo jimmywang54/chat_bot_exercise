@@ -1,13 +1,9 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from api.routes import router
 
 app = FastAPI()
-
-# Message Schema
-class ChatMessage(BaseModel):
-    message: str
 
 app.add_middleware(
     CORSMiddleware,
@@ -17,14 +13,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Health check endpoint
-@app.get("/api/health")
-def health_check():
-    return {"status": "ok"}
-
-# Chat endpoints
-@app.post("/api/chat")
-def chat(chat_message: ChatMessage):
-    resposne = "Hi there!"
-
-    return {"response": resposne}
+app.include_router(router)

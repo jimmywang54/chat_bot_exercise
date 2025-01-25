@@ -11,16 +11,23 @@ chat_bot_exercise/
 │
 ├── backend/               # Backend code using FastAPI
 │   ├── README.md          # Instructions specific to the backend
-|   ├── requirements.txt   # List of needed packages or libraries
-|   ├── .gitignore         # Git ignored files
-│   └── main.py            # Main backend application file
+│   ├── requirements.txt   # List of needed Python packages or libraries
+│   ├── .gitignore         # Git ignored files for the backend
+│   ├── main.py            # Main FastAPI backend application file
+│   └── api/               # Backend API logic (optional modular structure)
+│       └── routes.py      # Route definitions for the API
 │
 ├── frontend/              # Frontend code using React
 │   ├── README.md          # Instructions specific to the frontend
-|   ├── .gitignore         # Git ignored files
+│   ├── .gitignore         # Git ignored files for the frontend
+│   ├── package.json       # Frontend dependencies and scripts
 │   └── src/               # React source files
+│       ├── components/    # React components
+│       ├── App.js         # Main React application file
+│       └── App.css        # Styling for the application
 │
-└── README.md              # General project documentation (this file)
+├── .gitignore             # General Git ignored files
+├── README.md              # General project documentation (this file)
 ```
 
 ## Getting Started
