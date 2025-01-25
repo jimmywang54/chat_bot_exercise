@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Chatbot Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend application for the Chatbot Exercise project, built using [Create React App](https://github.com/facebook/create-react-app). It serves as the user interface for interacting with the chatbot.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **Getting Started**
+
+### Prerequisites
+
+Before running the application, ensure you have the following installed:
+- Node.js (14+)
+- npm (comes with Node.js)
+
+### Setup Instructions
+
+1. **Install Dependencies**:
+   Navigate to the `frontend` folder and install the required dependencies:
+   ```bash
+   npm install
+   ```
+
+2. **Start the Development Server**:
+   Run the following command to start the application in development mode:
+   ```bash
+   npm start
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+
+3. Ensure the backend is running to handle API requests. The backend is expected to run on [http://localhost:8000](http://localhost:8000).
+
+---
+
+## **Available Scripts**
+
+In the project directory, you can run the following commands:
 
 ### `npm start`
+Runs the app in development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The page reloads automatically when changes are made to the source code.\
+You may also see lint errors in the console.
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in interactive watch mode.\
+Run unit tests for components and functionality.
 
 ### `npm run build`
-
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Optimizes the build for the best performance by minifying and bundling the code.
 
 ### `npm run eject`
+**Note: This is a one-way operation. Once you `eject`, you can't go back!**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This command copies all the configuration files and dependencies into your project, allowing full customization.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## **Project Structure**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+frontend/
+├── public/               # Static public assets
+├── src/                  # Source code
+│   ├── components/       # Reusable React components
+│   │   ├── Chat.js       # Main chat component
+│   │   ├── Input.js      # Message input component
+│   │   ├── Message.js    # Individual message component
+│   │   └── MessageList.js # List of messages
+│   ├── App.js            # Main application entry point
+│   ├── App.css           # Styling for the application
+│   ├── constants.js      # Application constants (e.g., API URLs)
+│   ├── api.js            # API abstraction for backend communication
+│   └── index.js          # Application bootstrap
+├── .gitignore            # Git ignored files
+├── package.json          # Project dependencies and scripts
+└── README.md             # This file
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## **Features**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Clean UI for chatting with the bot.
+- Input with "Enter" key submission and button click support.
+- "Send" button disabled when input is empty.
+- Responsive design using Tailwind CSS.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## **Tailwind CSS Integration**
 
-### Analyzing the Bundle Size
+This project uses [Tailwind CSS](https://tailwindcss.com/) for styling. To make customizations:
+1. Modify the `tailwind.config.js` file.
+2. Add or update Tailwind classes directly in your components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## **Testing**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project includes unit tests for the components using **React Testing Library** and **Jest**. To run the tests:
+```bash
+npm test
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## **Deployment**
 
-### Deployment
+1. Build the application:
+   ```bash
+   npm run build
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Deploy the contents of the `build/` folder to your hosting platform (e.g., [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com/)).
