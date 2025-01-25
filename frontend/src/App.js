@@ -1,8 +1,7 @@
 import axios from 'axios';
 import './App.css';
 import React, { useState } from 'react';
-
-const SERVICE_URL = 'http://localhost:8000';
+import { BACKEND_SERVICE_URL } from './constants';
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -15,7 +14,7 @@ function App() {
     setMessages([...messages, userMessage]);
 
     try {
-      const response = await axios.post(`${SERVICE_URL}/api/chat`, {
+      const response = await axios.post(`${BACKEND_SERVICE_URL}/api/chat`, {
         message: input
       });
 
