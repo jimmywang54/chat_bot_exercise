@@ -6,7 +6,7 @@ import { sendMessageToBackend } from '../api';
 
 // Mock the API call
 jest.mock('../api', () => ({
-  sendMessageToBackend: jest.fn(),
+  sendMessageToBackend: jest.fn()
 }));
 
 describe('Chat Component', () => {

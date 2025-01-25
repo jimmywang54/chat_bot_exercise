@@ -7,7 +7,7 @@ describe('MessageList Component', () => {
   it('renders a list of messages', () => {
     const messages = [
       { role: 'user', content: 'Hello bot' },
-      { role: 'bot', content: 'Hello user' },
+      { role: 'bot', content: 'Hello user' }
     ];
 
     render(<MessageList messages={messages} />);
