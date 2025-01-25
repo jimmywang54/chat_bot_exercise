@@ -9,6 +9,14 @@ app = FastAPI()
 class ChatMessage(BaseModel):
     message: str
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # Health check endpoint
 @app.get("/api/health")
 def health_check():
