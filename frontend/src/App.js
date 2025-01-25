@@ -1,8 +1,8 @@
-import './App.css'
-import React from 'react'
+import './App.css';
+import React from 'react';
 
 function App() {
-  return <div>Hello Chatbot</div>
+  const [messages, setMessages] = useState([]);
 }
 
-export default App
+export default App;
