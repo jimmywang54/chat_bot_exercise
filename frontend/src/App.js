@@ -2,6 +2,7 @@ import axios from 'axios';
 import './App.css';
 import React, { useState } from 'react';
 import { BACKEND_SERVICE_URL } from './constants';
+import { sendMessageToBackend } from './api';
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -14,14 +15,11 @@ function App() {
     setMessages([...messages, userMessage]);
 
     try {
-      const response = await axios.post(`${BACKEND_SERVICE_URL}/api/chat`, {
-        message: input
-      });
-
-      const botMessage = { role: 'bot', content: response.data.response };
+      const botResponse = await sendMessageToBackend(input);
+      const botMessage = { role: 'bot', content: botResponse };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
     } catch (error) {
-      console.error('Error fetching response: ', error);
+      console.error('Error sending message:', error);
     }
 
     setInput('');
