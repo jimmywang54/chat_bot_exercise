@@ -1,8 +1,10 @@
 # Chatbot Exercise
 
-This is the # Chatbot Exercise
+This is the Chatbot Exercise
 
 This is the main repository for the Chatbot Exercise project, which consists of a frontend, backend, and other relevant configurations. It is designed to demonstrate the creation of a simple chatbot application with a React frontend and a FastAPI backend.
+
+<img src="assets/demo.gif" alt="Demo" width="500">
 
 ## Project Structure
 
