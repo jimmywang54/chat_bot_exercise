@@ -53,6 +53,6 @@
     - Response:
         ```json
         {
-            "response": "Hi there"
+            "response": "Hello! How can I assist you today?"
         }
         ```

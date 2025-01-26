@@ -1,10 +1,10 @@
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.routes import router
 
 app = FastAPI()
 
+# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -13,4 +13,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include the API routes
 app.include_router(router)
+
+@app.get("/")
+def root():
+    return {"message": "Welcome to the Chat Bot API"}
