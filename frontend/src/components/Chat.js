@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import MessageList from './MessageList';
 import Input from './MessageInput';
+import SearchBar from './SearchBar';
 import { sendMessageToBackend } from '../api';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
+  const [keyword, setKeyword] = useState('');
   const [input, setInput] = useState('');
 
   const handleSend = async () => {
@@ -25,9 +27,14 @@ const Chat = () => {
     setInput('');
   };
 
+  const onKeywordChange = (event) => {
+    setKeyword(event.target.value);
+  }
+
   return (
     <div className='flex flex-col h-screen bg-gray-100 p-4'>
-      <MessageList messages={messages} />
+      <SearchBar keyword={keyword} onKeywordChange={onKeywordChange}/>
+      <MessageList messages={messages.filter(message => message.content.toLowerCase().includes(keyword.toLowerCase()))} />
       <Input value={input} onChange={setInput} onSend={handleSend} />
     </div>
   );
